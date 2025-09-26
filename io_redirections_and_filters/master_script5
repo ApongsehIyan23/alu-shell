@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# This script writes the correct command into the existing script file.
+
+echo "Populating script for question 26..."
+
+# --- Script 26: The biggest fan ---
+cat <<'EOF' > 26-the_biggest_fan
+#!/bin/bash
+cut -f1 | sort | uniq -c | sort -nr | head -n 11 | awk '{print $2}'
+EOF
+
+echo "Script 26 has been successfully populated."
+
