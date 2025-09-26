@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# This script writes the correct commands into the existing script files.
+
+echo "Populating scripts for questions 23-25..."
+
+# --- Script 23: Empty casks make the most noise ---
+cat <<'EOF' > 23-empty_casks
+#!/bin/bash
+find . -empty -printf "%f\n"
+EOF
+
+# --- Script 24: A gif is worth ten thousand words ---
+cat <<'EOF' > 24-gifs
+#!/bin/bash
+find . -type f -name "*.gif" -printf "%f\n" | sed 's/\.gif$//' | sort -f
+EOF
+
+# --- Script 25: Acrostic ---
+cat <<'EOF' > 25-acrostic
+#!/bin/bash
+cut -c1 | tr -d '\n' && echo
+EOF
+
+echo "Scripts 23-25 have been successfully populated."
+
