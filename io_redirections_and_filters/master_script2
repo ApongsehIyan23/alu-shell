@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# This script writes the correct commands into the existing script files.
+
+echo "Populating scripts for questions 9-14..."
+
+# --- Script 9: Duplicate last line ---
+cat <<'EOF' > 9-duplicate_last_line
+#!/bin/bash
+tail -n 1 iacta >> iacta
+EOF
+
+# --- Script 10: No more javascript ---
+cat <<'EOF' > 10-no_more_js
+#!/bin/bash
+find . -type f -name "*.js" -delete
+EOF
+
+# --- Script 11: Don't just count your directories, make your directories count ---
+cat <<'EOF' > 11-directories
+#!/bin/bash
+find . -mindepth 1 -type d | wc -l
+EOF
+
+# --- Script 12: What’s new ---
+cat <<'EOF' > 12-newest_files
+#!/bin/bash
+ls -t | head -n 10
+EOF
+
+# --- Script 13: Being unique is better than being perfect ---
+cat <<'EOF' > 13-unique
+#!/bin/bash
+sort | uniq -u
+EOF
+
+# --- Script 14: It must be in that file ---
+cat <<'EOF' > 14-findthatword
+#!/bin/bash
+grep "root" /etc/passwd
+EOF
+
+echo "Scripts 9-14 have been successfully populated."
+
