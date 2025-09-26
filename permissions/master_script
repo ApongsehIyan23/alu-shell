@@ -1,0 +1,53 @@
+#!/bin/bash
+
+echo "Updating script contents..."
+
+# --- Script 1: Who am I ---
+cat <<'EOF' > 1-who_am_i
+#!/bin/bash
+whoami
+EOF
+
+# --- Script 2: Groups ---
+cat <<'EOF' > 2-groups
+#!/bin/bash
+groups
+EOF
+
+# --- Script 3: New owner ---
+cat <<'EOF' > 3-new_owner
+#!/bin/bash
+chown betty hello
+EOF
+
+# --- Script 4: Empty! ---
+cat <<'EOF' > 4-empty
+#!/bin/bash
+touch hello
+EOF
+
+# --- Script 5: Execute ---
+cat <<'EOF' > 5-execute
+#!/bin/bash
+chmod u+x hello
+EOF
+
+# --- Script 6: Multiple permissions ---
+cat <<'EOF' > 6-multiple_permissions
+#!/bin/bash
+chmod ug+x,o+r hello
+EOF
+
+# --- Script 7: Everybody! ---
+cat <<'EOF' > 7-everybody
+#!/bin/bash
+chmod a+x hello
+EOF
+
+# --- Script 8: James Bond ---
+cat <<'EOF' > 8-James_Bond
+#!/bin/bash
+chmod 007 hello
+EOF
+
+echo "All 8 scripts have been successfully populated with their commands."
