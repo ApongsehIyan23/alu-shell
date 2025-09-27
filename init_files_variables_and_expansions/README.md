@@ -1,3 +1,2 @@
-Here is the readme file
-
+#!/bin/bash
 
